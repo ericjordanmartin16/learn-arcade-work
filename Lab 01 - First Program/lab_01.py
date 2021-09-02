@@ -1,0 +1,5 @@
+print("Name: Eric Martin")
+print("This is my first program using Python!")
+print("Isn\'t this really entertaining!")
+print("Now I am creating \na new line of text.")
+print("This is my last line of text. Thank you!")
