@@ -1,6 +1,11 @@
 """
 Eric Martin, Intro to Computer Science, Instructor Paul Craven. Lab #3: Drawing with Functions.
 """
+
+"""-4 on complexity. Only the draw_house function took in an x, y and was more than one line of code.
+
+-1 as three functions were to take in an x, y and this code only has two functions do  that."""
+
 import arcade
 
 SCREEN_WIDTH = 600
@@ -20,7 +25,6 @@ def draw_streets():
 
 def draw_house(x, y, house_color, roof_color):
     """Draws a house at point (x, y) of color (a, b, c)"""
-    arcade.draw_point(x, y, arcade.color.RED, 5)
 
     # Draw a square for the body of the house.
     arcade.draw_rectangle_filled(x, y, 40, 40, house_color)
@@ -28,10 +32,24 @@ def draw_house(x, y, house_color, roof_color):
     # Draw a triangle for the roof of the house.
     arcade.draw_triangle_filled(x - 20, y + 20, x + 20, y + 20, x, y + 50, roof_color)
 
+    # Draw windows for each house.
+    arcade.draw_rectangle_outline(x - 10, y + 10, 10, 10, (0, 0, 0))
+    arcade.draw_rectangle_outline(x + 10, y + 10, 10, 10, (0, 0, 0))
+
+    # Draw a door for each house.
+    arcade.draw_rectangle_outline(x, y - 12.5, 10, 15, (0, 0, 0))
+
 
 def draw_pond(x, y):
     """Draws a pond at point (x, y)"""
-    arcade.draw_ellipse_filled(x, y, 100, 60, arcade.csscolor.BLUE, 0, -1)
+    arcade.draw_ellipse_filled(x, y, 100, 60, (0, 0, 255), 0, -1)
+    arcade.draw_ellipse_filled(x + 10, y + 5, 50, 30, (150, 150, 255), 0, -1)
+
+
+def draw_tree(x, y):
+    """Draws a tree at point (x, y)"""
+    arcade.draw_rectangle_filled(x, y, 10, 25, (150, 50, 50))
+    arcade.draw_triangle_filled(x - 15, y + 12.5, x + 15, y + 12.5, x, y + 60, (50, 255, 50))
 
 
 def main():
@@ -64,6 +82,15 @@ def main():
     draw_house(490, 380, (163, 222, 255), (200, 108, 3))
 
     draw_pond(450, 550)
+
+    draw_tree(50, 50)
+    draw_tree(100, 50)
+    draw_tree(150, 50)
+    draw_tree(200, 50)
+    draw_tree(300, 50)
+    draw_tree(350, 50)
+    draw_tree(400, 50)
+    draw_tree(450, 50)
 
     # Finish drawing
     arcade.finish_render()
