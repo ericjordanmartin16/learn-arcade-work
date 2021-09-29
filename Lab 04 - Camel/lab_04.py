@@ -1,5 +1,5 @@
 # Lab 04 - Camel Lab. Eric Martin, Intro to Programming. Instructor Paul Craven.
-# 23 September 2021
+# 30 September 2021
 
 import random
 
@@ -22,14 +22,14 @@ def main():
 
     done = False
     while not done:
-        print("")
+        print()
         print("A. Drink from your canteen.")
         print("B. Ahead moderate speed.")
         print("C. Ahead full speed.")
         print("D. Stop for the night.")
         print("E. Status check.")
         print("Q. Quit.")
-        print("")
+        print()
 
         user_choice = input("What is your choice? ")
         if user_choice.upper() == "Q":
@@ -46,7 +46,7 @@ def main():
             # stop for the night.
             camel_tiredness = 0
             print("Your camel is happy.")
-            natives_travel_distance += random.randrange(7, 14)
+            natives_travel_distance += random.randrange(7, 15)
         elif user_choice.upper() == "C":
             # ahead full speed.
             full_speed_travel_distance = random.randrange(10, 21)
@@ -56,6 +56,14 @@ def main():
             my_thirst += 1
             camel_tiredness += 1
             natives_travel_distance += random.randrange(7, 14)
+
+            # finding an oasis
+            oasis_int = random.randrange(21)
+            if not done and oasis_int == 0:
+                print("You found an oasis!")
+                my_thirst = 0
+                camel_tiredness = 0
+                drinks_in_canteen = 3
         elif user_choice.upper() == "B":
             # ahead moderate speed.
             moderate_speed_travel_distance = random.randrange(5, 13)
@@ -65,16 +73,47 @@ def main():
             my_thirst += 1
             camel_tiredness += 1
             natives_travel_distance += random.randrange(7, 14)
+
+            # finding an oasis
+            oasis_int = random.randrange(21)
+            if not done and oasis_int == 0:
+                print("You found an oasis!")
+                my_thirst = 0
+                camel_tiredness = 0
+                drinks_in_canteen = 3
         elif user_choice.upper() == "A":
             # drink from canteen
             if drinks_in_canteen > 0:
                 drinks_in_canteen -= 1
+                my_thirst = 0
             else:
                 print("You have no more drinks left in the canteen!")
         else:
             print("You entered an invalid character. Please try again.")
 
+        if my_thirst > 6:
+            print("You died of thirst!")
+            done = True
+        elif not done and my_thirst > 4:
+            print("You are thirsty.")
 
+        if camel_tiredness > 8:
+            print("Your camel is dead!")
+            done = True
+        elif not done and camel_tiredness > 5:
+            print("Your camel is getting tired.")
+
+        natives_travel_behind_you = my_travel_distance - natives_travel_distance
+        if natives_travel_behind_you <= 0:
+            print("The natives have caught you!")
+            done = True
+        elif not done and natives_travel_behind_you <= 15:
+            print("The natives are getting close!")
+
+        if not done:
+            if my_travel_distance >= 200:
+                print("You won the game!")
+                done = True
 
 
 main()
