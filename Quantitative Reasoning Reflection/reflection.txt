@@ -1,0 +1,27 @@
+Eric Martin
+1 December 2021
+Quantitative Reasoning Reflection
+
+1.) Quantitative Methods --
+
+
+
+
+
+
+
+
+4.)
+    Using computer programs to make certain decisions helps improve the
+accuracy of these decisions, but it also raises a number of concerns. For
+example, there have been issues with discrimination and fairness where A.I.
+systems have treated people differently based on certain characteristics such
+as race and gender. This is basically because the machines have 'learned' how
+to make decisions based on decisions that humans have made in the past, and
+these decisions are often biased.
+    There are other issues that replacing humans with algorithms raises,
+such as the impact on jobs and employment. If we replace humans with algorithms,
+then what will the humans do?
+    Humans are also important for providing empathy and having personalities
+based on shared human experience. The data certainly are important, but human
+qualities are also equally important if not more important.

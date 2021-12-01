@@ -1,5 +1,4 @@
 import arcade
-# import random
 
 WIDTH = 60
 HEIGHT = 60
@@ -19,9 +18,7 @@ class MyGame(arcade.Window):
 
     def __init__(self, width, height):
         super().__init__(width, height)
-
         arcade.set_background_color((0, 0, 0))
-
         # Create grid of numbers.
         self.grid = []
         for row in range(ROW_COUNT):
@@ -38,6 +35,7 @@ class MyGame(arcade.Window):
 
         color = (255, 255, 255)
         arcade.start_render()
+
         for row in range(ROW_COUNT):
             for column in range(COLUMN_COUNT):
                 x = WIDTH / 2 + column * (WIDTH + MARGIN) + MARGIN
@@ -56,63 +54,19 @@ class MyGame(arcade.Window):
         # Print the row and column where the user clicks.
         row = y // (HEIGHT + MARGIN)
         column = x // (WIDTH + MARGIN)
+
         # Set to green if the square is white, and vice versa.
+
         if self.grid[row][column] == 0:
             self.grid[row][column] = 1
         else:
             self.grid[row][column] = 0
-
-        """running_total = 0
-
-        for row in range(ROW_COUNT):
-            row_cell_count = 0
-            continuous_count = 0
-            print(f"Row {row} has {row_cell_count} cells selected.")
-            for column in range(COLUMN_COUNT):
-                column_cell_count = 0
-                if self.grid[row][column] == 1:
-                    row_cell_count += 1
-                    column_cell_count += 1
-                    running_total += 1
-                    continuous_count += 1
-                elif self.grid[row][column] == 0:
-                    if continuous_count > 2:
-                        print(f"There are {continuous_count + 1} continuous blocks selected on row {row}.")
-            print(f"Column {column} has {column_cell_count} cells selected.")"""
 
         running_total = 0
         for row in range(ROW_COUNT):
             for column in range(COLUMN_COUNT):
                 if self.grid[row][column] == 1:
                     running_total += 1
-            print(f"Running total: {running_total}")
-
-        for row in range(ROW_COUNT):
-            row_total = 0
-            for column in range(COLUMN_COUNT):
-                if self.grid[row][column] == 1:
-                    row_total += 1
-            print(f"Row total: {row_total}")
-
-        for column in range(COLUMN_COUNT):
-            column_total = 0
-            for row in range(ROW_COUNT):
-                if self.grid[row][column] == 1:
-                    column_total += 1
-            print(f"Column total: {column_total}")
-
-        for row in range(ROW_COUNT):
-            continuous_count = 0
-            for column in range(COLUMN_COUNT):
-                if self.grid[row][column] == 1:
-                    continuous_count += 1
-                elif self.grid[row][column] == 0:
-                    if continuous_count > 2:
-                        print(f"There are {continuous_count + 1} continuous blocks selected on row {row}.")
-                    continuous_count = 0
-
-            if continuous_count > 2:
-                print(f"There are {continuous_count + 1} continuous blocks selected on row {row}.")
 
         singular_text = "Total of 1 cell is selected."
         plural_text = f"Total of {running_total} cells are selected."
@@ -121,6 +75,32 @@ class MyGame(arcade.Window):
             print(singular_text)
         else:
             print(plural_text)
+
+        for row in range(ROW_COUNT):
+            row_total = 0
+            for column in range(COLUMN_COUNT):
+                if self.grid[row][column] == 1:
+                    row_total += 1
+            print(f"Row {row} has {row_total} items selected.")
+
+        for column in range(COLUMN_COUNT):
+            column_total = 0
+            for row in range(ROW_COUNT):
+                if self.grid[row][column] == 1:
+                    column_total += 1
+            print(f"Column {column} has {column_total} items selected.")
+
+        for row in range(ROW_COUNT):
+            continuous_count = 0
+            for column in range(COLUMN_COUNT):
+                if self.grid[row][column] == 1:
+                    continuous_count += 1
+                elif self.grid[row][column] == 0:
+                    if continuous_count > 2:
+                        print(f"There are {continuous_count} continuous blocks selected on row {row}.")
+                    continuous_count = 0
+            if continuous_count > 2:
+                print(f"There are {continuous_count} continuous blocks selected on row {row}.")
 
 
 def main():
