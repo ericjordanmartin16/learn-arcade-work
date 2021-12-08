@@ -1,18 +1,49 @@
 Eric Martin
-1 December 2021
+8 December 2021
 Quantitative Reasoning Reflection
 
-1.) Quantitative Methods --
+
+1.) In my programs, I used lists to store multiple pieces of information at one
+time. "If" statements were used to check if a certain (or multiple certain)
+condition(s) existed. 'For' loops were used to repeat a certain procedure a
+certain number of times, while 'while' loops were used to loop until a certain
+condition was true.
+    A class is an object that contains certain procedures and functionality
+specific to that class. Classes are best written as objects that can be used
+over and over again in multiple projects. For example, we created a class Ball
+that drew a ball on the screen. The Ball class had different attributes for size
+and color of the ball.
+	Functions are actions included in the class objects, such as printing or
+setting the color of a Ball object. Sample pieces of code are useful in
+providing examples of how to implement certain functionality. Deciding which
+'method' to apply was based upon the functionality that the program needed to
+provide. For example, we used 'for' loops when we knew how many columns and
+rows of triangles we needed to print out as a graphic.
 
 
+2.) It is important to write your code so that it is easily understood by other
+programmers. They need to be able to understand what the functionality of your
+program is.
+    It is important to have good variable names because if you have a variable
+name like x, no one will have a clue what you are talking about. However, if you
+have a variable name like total_distance_traveled, then other programmers will
+know what you are talking about. Your variable names should be descriptive.
+Likewise, including comments in your code also helps the reader to identify the
+functionality of that particular part of the program.
 
 
+3.) I tested and evaluated the accuracy of my code by whether the program
+produced the expected output and provided the functionality that it was supposed
+to provide. Many of our examples provided us with sample data, which we could
+use to check whether the program's output was accurate.
+    Sometimes, when something didn't work, the problem could be determined by
+the error that was output when the program was executed. Other times, I would
+have to look at the incorrect output and compare it to the expected output, and
+then I would have to go through the code to see what was causing the incorrect
+output to occur. This even included some trial and error.
 
 
-
-
-4.)
-    Using computer programs to make certain decisions helps improve the
+4.) Using computer programs to make certain decisions helps improve the
 accuracy of these decisions, but it also raises a number of concerns. For
 example, there have been issues with discrimination and fairness where A.I.
 systems have treated people differently based on certain characteristics such
@@ -25,3 +56,4 @@ then what will the humans do?
     Humans are also important for providing empathy and having personalities
 based on shared human experience. The data certainly are important, but human
 qualities are also equally important if not more important.
+
