@@ -4,7 +4,7 @@ Quantitative Reasoning Reflection
 
 
 1.) In my programs, I used lists to store multiple pieces of information at one
-time. "If" statements were used to check if a certain (or multiple certain)
+time. 'If' statements were used to check if a certain (or multiple certain)
 condition(s) existed. 'For' loops were used to repeat a certain procedure a
 certain number of times, while 'while' loops were used to loop until a certain
 condition was true.
