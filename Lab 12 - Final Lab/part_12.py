@@ -33,14 +33,11 @@ def fetch_items_in_room(room_list, current_room, item_list):
     that particular room.
     """
     for item in item_list:
-        item.room_number == room_list[current_room].room_number
-        # if room_list[current_room].room_number == item.room_number:
-        current_room_string = f"room_list[current_room].room_number = {room_list[current_room].room_number}"
-        item_room_string = f"item.room_number = {item.room_number}"
-        return current_room_string, item_room_string, item.description
-
-        # else:
-            # return "There are no items in the room."
+        if room_list[current_room].room_number == item.room_number:
+            current_room_string = f"room_list[current_room].room_number = {room_list[current_room].room_number}"
+            item_room_string = f"item.room_number = {item.room_number}"
+            return current_room_string, item_room_string, item.description
+    return "There are no items in the room."
 
 
 def main():
@@ -79,6 +76,13 @@ def main():
     room = Room(5, "You are currently in the laundry room. You can move south or "
                    "west.", None, None, 2, 4)
     room_list.append(room)
+
+    """for room in room_list:
+        north = room.room_number + 3
+        south = room.room_number - 3
+        east = room.room_number + 1
+        west = room.room_number - 1"""
+
 
     spoon = Item(1, "There is a spoon sitting on the counter top.", "spoon")
     item_list.append(spoon)
