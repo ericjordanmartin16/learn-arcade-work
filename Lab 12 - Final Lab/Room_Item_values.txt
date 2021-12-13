@@ -1,0 +1,10 @@
+Room|0|You are currently in the dining room. You can move north or east.|3|1|9|9
+Room|1|You are currently in the kitchen. You can move north, east, or west.|4|2|9|0
+Room|2|You are currently in the living room. You can move north or west.|5|9|9|1
+Room|3|You are currently in the bathroom. You can move south or east.|9|4|0|9
+Room|4|You are currently in the bedroom. You can move south, east, or west.|9|5|1|3
+Room|5|You are currently in the laundry room. You can move south or west.|9|9|2|4
+Item|0|There is a fork sitting on the table.|fork
+Item|1|There is a spoon sitting on the counter top.|spoon
+Item|2|There is an armchair sitting on the floor.|armchair
+Item|3|There is a bar of soap sitting near the sink.|soap
